@@ -21,7 +21,7 @@ using namespace std;
 /// @param max_iter NB of max iterations
 /// @param tol convergence criteria 
 /// @return 
-vector<double> pcg_solver(const vector<vector<double>>& A, const vector<double>& b, int max_iter, double tol);
+vector<double> pcg_solver(const vector<vector<double>>& A, const vector<double>& b, const vector<double>& x0, int max_iter, double tol);
 
 
 #endif
