@@ -1,4 +1,4 @@
-# A small project to practice git 
+# A small project to practice git
 In this exercise, you’ll work with a Python script (`TP.py`), uncomment sections step-by-step by removing `#` before each line, commit changes, and run the script to see the output. The project runs in GitHub Codespaces and focuses on Git essentials with immediate feedback. The script starts empty and grows as you uncomment sections—perfect for learning Git workflows collaboratively.
 
 Work in pairs (***Dev.A*** and ***Dev.B***) to achieve efficiency.
@@ -11,15 +11,15 @@ Before diving into Git operations, configure your Git environment in Codespaces.
   ```
 - Press Enter for default file (~/.ssh/id_ed25519), skip passphrase (press Enter twice).
 - Add your SSH key to the ssh-agent
-    ```bash 
+    ```bash
     eval "$(ssh-agent -s)"
     ```
 - Add SSH private key to the ssh-agent
-    ```bash 
+    ```bash
     ssh-add ~/.ssh/id_ed25519
     ```
 - Copy the public key
-     ```bash 
+     ```bash
      cat ~/.ssh/id_ed25519.pub
     ```
 - Add SSH Key to GitHub
@@ -28,7 +28,7 @@ Before diving into Git operations, configure your Git environment in Codespaces.
     - Set title: “Class Key”.
     - Click Add SSH key.
 - Test the connection:
-     ```bash 
+     ```bash
     ssh -T git@github.com
     ```
 ### Local configurations
@@ -75,7 +75,7 @@ You don’t have write access to this repo, so fork it. Only one fork per pair!
 
 ## 2. Clone the repository
 In this part, ***Dev.B*** does the same thing as ***Dev.A***
-- clone the remote to local and then go to the local repository 
+- clone the remote to local and then go to the local repository
 ```bash
 git clone YourRemoteRepository
 cd GitTP
@@ -104,7 +104,7 @@ python TP.py
 ```bash
 git add TP.py
 ```
-- ***Both*** commit this modifications 
+- ***Both*** commit this modifications
 ```bash
 git commit -m "uncomment Step 1 for A and uncomment Step 2 for B"
 ```
@@ -114,11 +114,11 @@ check graph
 ```bash
 git push
 ```
-> One of the teammates will find that it is not possible to push the modifications. Try to figure it out. 
+> One of the teammates will find that it is not possible to push the modifications. Try to figure it out.
 
 > Tips: The teammate pushed after the first need to do ```git pull``` before the ```git push```
 
-- Try to get the same output for graph when finished. 
+- Try to get the same output for graph when finished.
 
 ## 4. Branch and merge
 - ***Dev.A***:
@@ -126,12 +126,12 @@ git push
     ```bash
     git checkout -b Step2
     ```
-  - Verify 
+  - Verify
     ```bash
     git branch
     ```
   - Uncomment Step 2 (remove # from "def subtract..." and "print..."), save and run it.
-  - Commit it 
+  - Commit it
     ```bash
     git add TP.py
     git ci -m "uncomment Step 2"
@@ -162,18 +162,18 @@ git push
     git merge Step2
     git push
     ```
-> Do not forget to check often with status and graph 
+> Do not forget to check often with status and graph
 - ***Dev.B***:
   - Create and checkout branch:
     ```bash
     git checkout -b Step3
     ```
-  - Verify 
+  - Verify
     ```bash
     git branch
     ```
   - Uncomment Step 3, save and run it.
-  - Commit it 
+  - Commit it
     ```bash
     git add TP.py
     git ci -m "uncomment Step 3"
@@ -204,13 +204,13 @@ git push
     git merge uncommentStep3
     git push
     ```
-- ***Both*** try to get the same workflow on graph 
+- ***Both*** try to get the same workflow on graph
 
-## 5. Manage conflicts 
+## 5. Manage conflicts
 - ***Dev.B***
     - create a new branch "uncommentStep4".
     - uncomment "Step 4", save and run it.
-    - commit this modification and merge it to main branch. 
+    - commit this modification and merge it to main branch.
     - publish it to remote.
 - ***Dev.A***
     - create a new branch "changeStep4".
@@ -219,14 +219,14 @@ git push
     - commit these modifications.
     - checkout to main.
     - do a ```git pull``` to update local main branch
-    - merge branch "changeStep4" to main.  
+    - merge branch "changeStep4" to main.
     - publish it to remote.
     - Resolve conflict:
     ```bash
     git mergetool
     ```
 
-> Here ***Dev.A*** has to handle the conflicts when merge "changeStep4" to main.  
+> Here ***Dev.A*** has to handle the conflicts when merge "changeStep4" to main.
 
 ## 6. Manage remote
 - ***Dev.B***
@@ -236,16 +236,16 @@ git push
         ```
     - publish this tag to remote
         ```bash
-        git push origin v1.0 
+        git push origin v1.0
         ```
     - Check tag in remote
-- ***Dev.A*** 
+- ***Dev.A***
     - fetche this tag to his local and check it on graph
 - ***Both***
     - create a private empty project in Koda.
-    - publish the project to Koda. 
+    - publish the project to Koda.
 
-## Checkout from a specific commit 
+## Checkout from a specific commit
 - ***Both***
     - Find first commit hash:
     ```bash
@@ -255,11 +255,11 @@ git push
     ```bash
     git checkout -b addContent Hash (Hash: commit ID)
     ```
-    - Chech files that you have in your repository 
+    - Chech files that you have in your repository
     ```bash
-    ls 
+    ls
     ```
-2. Both uncomment "Step 7", and commit this modifications. 
+2. Both uncomment "Step 7", and commit this modifications.
 ```
 git commit -a -m "uncomment Step 7"
 ```
@@ -277,13 +277,13 @@ std::cout<<"Problem solved!"<<endl;
 ```
 git commit -a -m "add end line"
 ```
-5. Both delete the line ```/*******Step 1 ********/``` 
-6. Both try to merge the fastest commit to main. 
+5. Both delete the line ```/*******Step 1 ********/```
+6. Both try to merge the fastest commit to main.
 ```
 git checkout main
 ```
 ```
 git cherry-pick hash
 ```
-Both do a ```git pull``` than ```git push```. 
+Both do a ```git pull``` than ```git push```.
 > You may need ```git stash``` to switch to branch main
